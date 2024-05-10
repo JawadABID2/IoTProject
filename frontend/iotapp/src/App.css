@@ -1,0 +1,16 @@
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  /* width: 200px; Ajustez la largeur selon vos besoins */
+  background-color: #dee1e4; /* Couleur de fond */
+  color: #090909; /* Couleur du texte */
+  padding-top: 3.5rem; /* Ajustez le padding pour éviter le chevauchement avec la navbar */
+}
+
+
+.hover-color:hover{
+  background-color: rgb(206, 206, 218); 
+}

@@ -17,7 +17,7 @@ const Dropdown__ =(props)=>{
 }
 const Navbar = () => {
     return (
-        <nav className="navbar bg-light" style={{ 'border': '1px solid #dee1e4' }}>
+        <nav className="navbar navbar-expand-lg bg-body fixed-top" style={{ border: '1px solid #dee1e4', marginBottom: 100  }}>
             <div className="container-fluid d-flex justify-content-between align-items-center">
                 <a className="navbar-brand" href="/">Logo</a>
                 <div className='d-flex'>

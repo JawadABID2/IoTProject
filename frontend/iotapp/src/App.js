@@ -15,6 +15,7 @@ import Notification from './pages/Notification'
 import Profile from './pages/Profile'
 import Login from './Auth/Login';
 import Logout from './Auth/Login';
+import Measures from './pages/Measures';
 
 
 function App(){
@@ -28,6 +29,7 @@ function App(){
                             <Route path='/Dashboard' element={<Dashboard/>}/>
                             <Route path='/Devices' element={<Devices/>}/>
                             <Route path='/Devices/:deviceId' element={<Device/>}/>
+                            <Route path='/Devices/:deviceId/:measure' element={<Measures/>}/>
                             <Route path='/Gateways' element={<Gateways/>}/>
                             <Route path='/Gateways/:GatewayId' element={<Gateway/>}/>
                             <Route path='/Notifications' element={<Notifications/>}/>

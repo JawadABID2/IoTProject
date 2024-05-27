@@ -5,22 +5,40 @@ import { Link, useLocation } from 'react-router-dom';
 function Sidebar() {
     const [currentPath, setCurrentPath] = useState("Home");
     const { maskSidebar, setMaskSidebar } = useContext(Contexte);
+    const { currentContext, SetCurrentContext } = useContext(Contexte)
     const handleMaskSidebar = () => {
         setMaskSidebar(!maskSidebar);
         console.log(maskSidebar);
     }
     const location = useLocation();
-    useEffect(()=>{
+    useEffect(() => {
         const path = location.pathname;
         const pathContext = path.split("/")[1]
         // console.log(path.split("/")[1]);
-        if(pathContext ==="Dashboard") setCurrentPath("Dashboard")
-        else if(pathContext ==="Devices") setCurrentPath("Devices")
-        else if(pathContext==="Gateways") setCurrentPath("Gateways")
-        else if(pathContext==="Notifications") setCurrentPath("Notifications")
-        else if(pathContext==="Profile") setCurrentPath("Profile")
-        else setCurrentPath("Home")
-
+        if (pathContext === "Dashboard") {
+            setCurrentPath("Dashboard")
+            SetCurrentContext("Dashboard")
+        }
+        else if (pathContext === "Devices") {
+            setCurrentPath("Devices")
+            SetCurrentContext("Devices")
+        }
+        else if (pathContext === "Gateways") {
+            setCurrentPath("Gateways")
+            SetCurrentContext("Gateways")
+        }
+        else if (pathContext === "Notifications") {
+            setCurrentPath("Notifications")
+            SetCurrentContext("Notifications")
+        }
+        else if (pathContext === "Profile") {
+            setCurrentPath("Profile")
+            SetCurrentContext("Profile")
+        }
+        else {
+            setCurrentPath("Home")
+            SetCurrentContext("Home")
+        }
     })
     return (
         <div className="sidebar bg-gray">
@@ -32,11 +50,11 @@ function Sidebar() {
 
                     )
                     }
-                    <span className='ms-auto me-1 fs-1 d-none d-sm-inline text-dark'><i className={` bi ${maskSidebar? 'bi-chevron-double-left':'bi-chevron-double-right'}`} onClick={handleMaskSidebar}></i></span>
+                    <span className='ms-auto me-1 fs-1 d-none d-sm-inline text-dark'><i className={` bi ${maskSidebar ? 'bi-chevron-double-left' : 'bi-chevron-double-right'}`} onClick={handleMaskSidebar}></i></span>
                 </div>
                 <hr className='text-secondary d-none d-sm-block' />
                 <ul className='nav nav-pills flex-column mt-3 mt-sm-0'>
-                    <li className={`nav-item text-dark fs-4 my-1 py-2 py-sm-0 hover-color ${currentPath==='Home'?'bg-secondary':''}`}>
+                    <li className={`nav-item text-dark fs-4 my-1 py-2 py-sm-0 hover-color ${currentPath === 'Home' ? 'bg-secondary' : ''}`}>
                         <Link to="/" className='text-dark'>
                             <i className='ms-3 bi bi-house-door'></i>
                             {maskSidebar && (
@@ -44,7 +62,7 @@ function Sidebar() {
                             )}
                         </Link>
                     </li>
-                    <li className={`nav-item text-dark fs-4 my-1 py-2 py-sm-0 hover-color ${currentPath==='Dashboard'?'bg-secondary':''}`}>
+                    <li className={`nav-item text-dark fs-4 my-1 py-2 py-sm-0 hover-color ${currentPath === 'Dashboard' ? 'bg-secondary' : ''}`}>
                         <Link to="/Dashboard" className='text-dark'>
                             <i className='ms-3 bi bi-speedometer2'></i>
                             {maskSidebar && (
@@ -53,7 +71,7 @@ function Sidebar() {
                         </Link>
                     </li>
                     {/* bi bi-house-door */}
-                    <li className={`nav-item text-dark fs-4 my-1 py-2 py-sm-0 hover-color ${currentPath === 'Devices'?'bg-secondary':''}`}>
+                    <li className={`nav-item text-dark fs-4 my-1 py-2 py-sm-0 hover-color ${currentPath === 'Devices' ? 'bg-secondary' : ''}`}>
                         <Link to="/Devices" className='text-dark'>
                             <i className='ms-3 bi bi-phone-vibrate-fill'></i>
                             {maskSidebar && (
@@ -61,7 +79,7 @@ function Sidebar() {
                             )}
                         </Link>
                     </li>
-                    <li className={`nav-item text-dark fs-4 my-1 py-2 py-sm-0 hover-color ${currentPath === 'Gateways'?'bg-secondary':''}`}>
+                    <li className={`nav-item text-dark fs-4 my-1 py-2 py-sm-0 hover-color ${currentPath === 'Gateways' ? 'bg-secondary' : ''}`}>
                         <Link to="/Gateways" className='text-dark'>
                             <i className='ms-3 bi bi-broadcast-pin'></i>
                             {maskSidebar && (
@@ -69,7 +87,7 @@ function Sidebar() {
                             )}
                         </Link>
                     </li>
-                    <li className={`nav-item text-dark fs-4 my-1 py-2 py-sm-0 hover-color ${currentPath === 'Notifications'?'bg-secondary':''}`}>
+                    <li className={`nav-item text-dark fs-4 my-1 py-2 py-sm-0 hover-color ${currentPath === 'Notifications' ? 'bg-secondary' : ''}`}>
                         <Link to="/Notifications" className='text-dark'>
                             <i className='ms-3 bi bi-snapchat'></i>
                             {maskSidebar && (
@@ -77,7 +95,7 @@ function Sidebar() {
                             )}
                         </Link>
                     </li>
-                    <li className={`nav-item text-dark fs-4 my-1 py-2 py-sm-0 hover-color ${currentPath === 'Profile'?'bg-secondary':''}`}>
+                    <li className={`nav-item text-dark fs-4 my-1 py-2 py-sm-0 hover-color ${currentPath === 'Profile' ? 'bg-secondary' : ''}`}>
                         <Link to="/Profile" className='text-dark'>
                             <i className='ms-3 bi bi-person'></i>
                             {maskSidebar && (

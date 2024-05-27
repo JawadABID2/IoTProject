@@ -9,8 +9,34 @@
   color: #090909; /* Couleur du texte */
   padding-top: 3.5rem; /* Ajustez le padding pour éviter le chevauchement avec la navbar */
 }
+.currentpath {
+  position: fixed;
+  left: 200px;
+  top: 0;
+  
+  /* width: 200px; Ajustez la largeur selon vos besoins */
+  background-color: #ffffff; /* Couleur de fond */
+  color: #090909; /* Couleur du texte */
+  padding-top: 3.5rem; /* Ajustez le padding pour éviter le chevauchement avec la navbar */
+}
 
 
 .hover-color:hover{
   background-color: rgb(206, 206, 218); 
+}
+
+.card-image {
+  width: 50%;
+  height: 50%;
+  /* Ajoutez d'autres styles au besoin */
+}
+.containerwithsidebar {
+  margin-left: 235px; /* Custom left margin */
+  margin-right: 50px; /* Custom right margin */
+}
+
+
+.containerwithoutsidebar {
+  margin-left: 100px; /* Custom left margin */
+  margin-right: 50px; /*Custom right margin*/
 }

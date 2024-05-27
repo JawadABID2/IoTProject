@@ -1,22 +1,19 @@
-import React from 'react'
-import '../App.css'
 import Sidebar from '../components/Sidebar'
 import Navbar from '../components/Navbar'
-import Main from '../components/Main'
 import CurrentPath from '../components/CurrentPath'
 import CurrentContext from '../components/CurrentContext'
+import Main from '../components/Main'
 
-
-function Home() {
+function Measures() {
   return (
     <div className='App'>
-      <Sidebar/>
-      <Navbar/>
-      <CurrentPath/>
-      <CurrentContext/>
-      <Main layout="Home"/>
+        <Sidebar/>
+        <Navbar/>
+        <CurrentPath/>
+        <CurrentContext/>
+        <Main layout="Measures"/>
     </div>
   )
 }
 
-export default Home
+export default Measures
